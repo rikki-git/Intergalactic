@@ -55,14 +55,9 @@ atom.declare("Game.Controller",
 	{
 		document.getElementById("loadingImg").style.display = "none";
 	
-		if(GameSettings.touchMode)
-		{
-			document.getElementById("btn_controll_left").style.display = "block";
-			document.getElementById("btn_controll_right").style.display = "block";
-		}
-	
 		Controller = this;
 	
+		this.updateCruiseButtons();
 		var div_CanvasSize = document.getElementById("div_CanvasSize");
 		this.fieldSize = new Size(div_CanvasSize.clientWidth, div_CanvasSize.clientHeight);
 		var app = new App({size: this.fieldSize});
@@ -199,32 +194,48 @@ atom.declare("Game.Controller",
 		
 		this.fpsMeter();
 		
-		document.getElementById("btn_controll_left").onclick = function()
-		{
-			Controller.cruiseControll_left = !Controller.cruiseControll_left;
-			Controller.updateCruiseButtons();
-		};
-		
-		document.getElementById("btn_controll_right").onclick = function()
-		{
-			Controller.cruiseControll_right = !Controller.cruiseControll_right;
-			Controller.updateCruiseButtons();
-		};
+		document.getElementById("btn_controll_left").onclick = this.ToggleCruiseLeft;
+		document.getElementById("btn_controll_leftPress").onclick = this.ToggleCruiseLeft;
+		document.getElementById("btn_controll_right").onclick = this.ToggleCruiseRight;
+		document.getElementById("btn_controll_rightPress").onclick = this.ToggleCruiseRight;
+	},
+	
+	ToggleCruiseLeft: function()
+	{
+		Controller.cruiseControll_left = !Controller.cruiseControll_left;
+		Controller.updateCruiseButtons();
+	},
+	
+	ToggleCruiseRight: function()
+	{
+		Controller.cruiseControll_right = !Controller.cruiseControll_right;
+		Controller.updateCruiseButtons();
 	},
 	
 	updateCruiseButtons: function()
 	{
-		var spriteLeft = "url(Textures/btnGreen.png)";
-		var spriteRight = "url(Textures/btnGreen.png)";
+		var left = document.getElementById("btn_controll_left");
+		var right = document.getElementById("btn_controll_right");
+		var leftPress = document.getElementById("btn_controll_leftPress");
+		var rightPress = document.getElementById("btn_controll_rightPress");
+	
+		left.style.display = "none";
+		right.style.display = "none";
+		leftPress.style.display = "none";
+		rightPress.style.display = "none";
+	
+		if (!GameSettings.touchMode)
+			return;
 	
 		if (Controller.cruiseControll_left)
-			spriteLeft = "url(Textures/btnGreenPress.png)";
+			leftPress.style.display = "block";
+		else
+			left.style.display = "block";
 		
 		if (Controller.cruiseControll_right)
-			spriteRight = "url(Textures/btnGreenPress.png)";
-	
-		document.getElementById("btn_controll_left").style.backgroundImage = spriteLeft;
-		document.getElementById("btn_controll_right").style.backgroundImage = spriteRight;
+			rightPress.style.display = "block";
+		else
+			right.style.display = "block";
 	},
 	
 	addLayersTranslate: function(point)
