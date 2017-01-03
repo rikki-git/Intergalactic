@@ -6,11 +6,7 @@ var AnimationSheets = {};
 atom.declare("Game.Controller",
 {
 	initialize: function() 
-	{	
-		document.getElementById("shield_online").style.display = "none";
-		document.getElementById("shield_offline").style.display = "none";
-		document.getElementById("shield_charging").style.display = "none";
-	
+	{		
 		atom.ImagePreloader.run(
 		{
 			ship1: "Textures/ship1.png",
