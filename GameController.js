@@ -55,6 +55,12 @@ atom.declare("Game.Controller",
 	{
 		document.getElementById("loadingImg").style.display = "none";
 	
+		if(GameSettings.touchMode)
+		{
+			document.getElementById("btn_controll_left").style.display = "block";
+			document.getElementById("btn_controll_right").style.display = "block";
+		}
+	
 		Controller = this;
 	
 		var div_CanvasSize = document.getElementById("div_CanvasSize");

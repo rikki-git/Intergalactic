@@ -56,6 +56,9 @@ atom.declare("Game.GUImanager",
 		on.style.display = "none";
 		off.style.display = "none";
 		
+		if (GameSettings.touchMode)
+			return;
+		
 		switch(status)
 		{
 			case "on": on.style.display = "block"; break;
@@ -75,6 +78,9 @@ atom.declare("Game.GUImanager",
 		
 		online.style.display = "none";
 		offline.style.display = "none";
+		
+		if (GameSettings.touchMode)
+			return;
 		
 		switch(status)
 		{

@@ -38,8 +38,8 @@
     <body style="width: 100%; height: 100%; padding: 0; margin: 0;">
 		<div id="div_CanvasSize" style="width: 100%; height: 100%; background: black; position: fixed; top: 0; left: 0;"></div>
 		
-		<div id="btn_controll_left" 	style="display: none; cursor: pointer; outline:none; position: fixed; bottom: 0; left: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(Textures/btnGreen.png);"></div>
-		<div id="btn_controll_right" 	style="display: none; cursor: pointer; outline:none; position: fixed; bottom: 0; right: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(Textures/btnGreen.png);"></div>
+		<div id="btn_controll_left" 	style="cursor: pointer; outline:none; position: fixed; bottom: 0px; left: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(Textures/btnGreen.png); display: none;"></div>
+		<div id="btn_controll_right" 	style="cursor: pointer; outline:none; position: fixed; bottom: 0px; right: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(Textures/btnGreen.png); display: none;"></div>
 		
 		<div id="shield_offline" 	style="z-index: 1; position: fixed; background-image: url(Textures/shield/offline.png); width: 200px; height: 34px; right: 10px; top: 40px; display: none"></div>
 		<div id="shield_charging" 	style="z-index: 1; position: fixed; background-image: url(Textures/shield/charging.png); width: 200px; height: 34px; right: 10px; top: 40px; display: none"></div>
@@ -84,7 +84,12 @@
 					<input id="shipCount_cruiser"></input>
 				</div>
 				
+				<div>
+					<input id="touchMode" type="checkbox">Touch mode</input>
+				</div>
+				
 				<div id="tip"> Use keyboard arrows to control your ship </div>
+				<div id="tip"> Reload page to restart </div>
 				
 				<button id="playButton">PLAY</button>
 			</div>

@@ -10,7 +10,8 @@ atom.dom(function ()
 		spawnPlayer: 1,
 		fighterCount: 4,
 		cruiserCount: 3,
-		batCount: 5
+		batCount: 5,
+		touchMode: false
 	};
 	
 	if (localStorage["GameSettings"] != null)
@@ -37,6 +38,8 @@ atom.dom(function ()
 	document.getElementById("shipCount_corvette").value = GameSettings.fighterCount;
 	document.getElementById("shipCount_cruiser").value = GameSettings.cruiserCount;
 	
+	document.getElementById("touchMode").checked = GameSettings.touchMode;
+	
 	var playBtn = document.getElementById("playButton");
 	playBtn.addEventListener("click", PlayBtnClick, false);
 });
@@ -54,6 +57,8 @@ function PlayBtnClick()
 	if (isNaN(GameSettings.batCount) || GameSettings.batCount < 0) GameSettings.batCount = 0;
 	if (isNaN(GameSettings.fighterCount) || GameSettings.fighterCount < 0) GameSettings.fighterCount = 0;
 	if (isNaN(GameSettings.cruiserCount) || GameSettings.cruiserCount < 0) GameSettings.cruiserCount = 0;
+	
+	GameSettings.touchMode = document.getElementById("touchMode").checked;
 	
 	localStorage["GameSettings"] = JSON.stringify(GameSettings);
 	new Game.Controller('canvas');
