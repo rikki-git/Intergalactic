@@ -6,7 +6,10 @@ var AnimationSheets = {};
 atom.declare("Game.Controller",
 {
 	initialize: function() 
-	{		
+	{
+		document.getElementById("setupForm").style.display = "none";
+		document.getElementById("loadingImg").style.display = "block";
+	
 		atom.ImagePreloader.run(
 		{
 			ship1: "Textures/ship1.png",
@@ -39,10 +42,19 @@ atom.declare("Game.Controller",
 			ship4: "Textures/ship4.png",
 			ship4_broken: "Textures/ship4_broken.png"
 		}, this.run, this);
+		//}, this.debugDelay, this);
+	},
+	
+	debugDelay: function(images)
+	{
+		var contr = this;
+		setTimeout(function() { contr.run(images) }, 1000);
 	},
 	
 	run: function(images)
 	{
+		document.getElementById("loadingImg").style.display = "none";
+	
 		Controller = this;
 	
 		var div_CanvasSize = document.getElementById("div_CanvasSize");
@@ -88,10 +100,11 @@ atom.declare("Game.Controller",
 		
 		this.ships = [];
 		this.zIndexCounter = 1000;
-		var spawnPlayer = 1; //1 fighter_1, 2 cruiser_tesla, 3 fighter_bat
-		var fighterCount = 5;
-		var cruiserCount = 1;
-		var batCount = 1;
+		var spawnPlayer = GameSettings.spawnPlayer; //1 fighter_1, 2 cruiser_tesla, 3 fighter_bat
+		
+		var fighterCount = GameSettings.fighterCount;
+		var cruiserCount = GameSettings.cruiserCount;
+		var batCount = GameSettings.batCount;
 		this.PlayerController = new Game.PlayerController();
 		var spawnArea = this.mapSizeStopShips;
 		

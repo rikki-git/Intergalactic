@@ -4,7 +4,8 @@
    <head>
       <meta charset="utf-8"/>
 	  
-	  <link href="Lib/atom.css" rel="stylesheet" />
+	  <link href="Lib/atom.css" rel="stylesheet"/>
+	  <link href="Form.css" rel="stylesheet"/>
 	  
       <script src="Lib/atom.js"></script>
       <script src="Lib/libcanvas.js"></script>
@@ -48,5 +49,46 @@
 		<div id="engine_online"  style="z-index: 1; position: fixed; background-image: url(Textures/engine/borderOnline.png); width: 64px; height: 64px; right: 10px; bottom: 10px; display: none"></div>
 		<div id="engine_on"  	 style="z-index: 1; position: fixed; background-image: url(Textures/engine/engineOn.png);  width: 64px; height: 64px; right: 10px; bottom: 10px; display: none"></div>
 		<div id="engine_off" 	 style="z-index: 1; position: fixed; background-image: url(Textures/engine/engineOff.png); width: 64px; height: 64px; right: 10px; bottom: 10px; display: none"></div>
+		
+		<div id="loadingImg" style="z-index: 1; position: absolute; width: 100%; height: 100%; top: 0; left: 0; overflow: auto; display: none;">
+			<div style="z-index: 1; background-image: url(Textures/loading.png);  width: 200px; height: 100px; top: 40%; left: 50%; position: absolute; margin: -50px 0 0 -100px;"></div>
+		</div>
+		
+		<div id="setupForm">
+			<div id="formWindow">
+			
+				<div id="formTitle">Start game</div>
+				
+				<div id="playerType">
+					Ship:
+					<input id="pt_3" name="radioPlayer" value="3" type="radio">Fighter</input>
+					<input id="pt_1" name="radioPlayer" value="1" type="radio" checked="true">Corvette</input>
+					<input id="pt_2" name="radioPlayer" value="2" type="radio">Cruiser</input>
+				</div>
+				
+				<div class="shipCounts">
+					AI Fighter's: 
+					<br>
+					<input id="shipCount_fighter"></input>
+				</div>
+				
+				<div class="shipCounts">
+					AI Corvette's: 
+					<br>
+					<input id="shipCount_corvette"></input>
+				</div>
+				
+				<div class="shipCounts">
+					AI Cruiser's: 
+					<br>
+					<input id="shipCount_cruiser"></input>
+				</div>
+				
+				<div id="tip"> Use keyboard arrows to control your ship </div>
+				
+				<button id="playButton">PLAY</button>
+			</div>
+		</div>
+		
 	</body>
 </html>

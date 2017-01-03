@@ -1,0 +1,51 @@
+#setupForm
+{	
+	z-index: 1; 
+	position: absolute; 
+	width: 100%; 
+	height: 100%; 
+	top: 0; 
+	left: 0; 
+	overflow: auto; 
+}
+
+#formWindow
+{
+	width: 300px; 
+	top: 20%; 
+	left: 50%; 
+	position: absolute; 
+	margin: 0 0 0 -150px;
+	background-color: #cccccc;
+	text-align: center;
+}
+
+#formTitle
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	width: 100%;
+	background-color: #b399ff;
+}
+
+#playerType
+{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.shipCounts
+{
+	text-align: center;
+}
+
+#playButton
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
