@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html style="width: 90%; height: 90%; padding: 0; margin: 0;">
+	
+   <head>
+      <meta charset="utf-8"/>
+	  
+	  <link href="Lib/atom.css" rel="stylesheet" />
+	  
+      <script src="Lib/atom.js"></script>
+      <script src="Lib/libcanvas.js"></script>
+	  
+	  <script src="Main.js"></script>
+      <script src="GameController.js"></script>
+      <script src="Part.js"></script>
+      <script src="Ship.js"></script>
+      <script src="Ship_fighter_1.js"></script>
+      <script src="Ship_fighter_bat.js"></script>
+      <script src="Part.js"></script>
+      <script src="Part_turret_1.js"></script>
+      <script src="PlayerController.js"></script>
+      <script src="Teams.js"></script>
+      <script src="Explosion.js"></script>
+      <script src="Bullet.js"></script>
+      <script src="AI_fighter.js"></script>
+      <script src="AI_fighter_bat.js"></script>
+      <script src="Aim.js"></script>
+      <script src="Part_engine_1.js"></script>
+      <script src="MapObject.js"></script>
+      <script src="Minimap.js"></script>
+      <script src="Ship_cruiser_tesla.js"></script>
+      <script src="Part_engine_2.js"></script>
+      <script src="GradientCircle.js"></script>
+      <script src="GUImanager.js"></script>
+      <script src="SoundPlayer.js"></script>
+   </head>
+   
+    <body style="width: 100%; height: 100%; padding: 0; margin: 0;">
+		<div id="div_CanvasSize" style="width: 100%; height: 100%; background: green; position: fixed; top: 0; left: 0;"></div>
+		
+		<div id="btn_controll_left" 	style="display: none; cursor: pointer; outline:none; position: fixed; bottom: 0; left: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(textures/btnGreen.png);"></div>
+		<div id="btn_controll_right" 	style="display: none; cursor: pointer; outline:none; position: fixed; bottom: 0; right: 0; background-size: cover; width: 100px; height: 100px; z-index: 1; background-image: url(textures/btnGreen.png);"></div>
+		
+		<div id="shield_offline" 	style="z-index: 1; position: fixed; background-image: url(textures/shield/offline.png); width: 200px; height: 34px; right: 10px; top: 40px;"></div>
+		<div id="shield_charging" 	style="z-index: 1; position: fixed; background-image: url(textures/shield/charging.png); width: 200px; height: 34px; right: 10px; top: 40px;"></div>
+		<div id="shield_online" 	style="z-index: 1; position: fixed; background-image: url(textures/shield/online.png); width: 200px; height: 34px; right: 10px; top: 40px;"></div>
+		
+		<div id="engine_offline" style="z-index: 1; position: fixed; background-image: url(textures/engine/borderOffline.png); width: 64px; height: 64px; right: 10px; bottom: 10px;"></div>
+		<div id="engine_online"  style="z-index: 1; position: fixed; background-image: url(textures/engine/borderOnline.png); width: 64px; height: 64px; right: 10px; bottom: 10px;"></div>
+		<div id="engine_on"  	 style="z-index: 1; position: fixed; background-image: url(textures/engine/engineOn.png);  width: 64px; height: 64px; right: 10px; bottom: 10px;"></div>
+		<div id="engine_off" 	 style="z-index: 1; position: fixed; background-image: url(textures/engine/engineOff.png); width: 64px; height: 64px; right: 10px; bottom: 10px;"></div>
+	</body>
+</html>

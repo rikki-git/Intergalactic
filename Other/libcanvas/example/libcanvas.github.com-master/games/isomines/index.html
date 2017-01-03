@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>LibCanvas :: Isometric Mines</title>
+        <link href="/files/styles.css" rel="stylesheet" />
+        <script src="/files/js/atom.js"></script>
+        <script src="/files/js/libcanvas.js"></script>
+	    <style>
+		    .libcanvas-app {
+			    background: #111;
+			    margin: 0;
+		    }
+		    canvas { border: 1px dotted green }
+	    </style>
+    </head>
+    <body>
+        <p><a href="/">Return to index</a></p>
+        <p>Drag the map using (mouse wheel) or (shift+click)</p>
+        <script>
+new function () {
+    LibCanvas.extract();
+	atom.patching(window);
+
+    atom.dom(function () {
+        new IsoMines.Controller();
+    });
+};
+        </script>
+        <script src="js/screenfull.js"></script>
+        <script src="js/fast-search.js"></script>
+        <script src="js/controller.js"></script>
+        <script src="js/wall.js"></script>
+        <script src="js/cell.js"></script>
+        <script src="js/view.js"></script>
+        <script src="js/generator.js"></script>
+    </body>
+</html>
