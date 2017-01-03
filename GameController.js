@@ -214,14 +214,14 @@ atom.declare("Game.Controller",
 	
 	updateCruiseButtons: function()
 	{
-		var spriteLeft = "url(textures/btnGreen.png)";
-		var spriteRight = "url(textures/btnGreen.png)";
+		var spriteLeft = "url(Textures/btnGreen.png)";
+		var spriteRight = "url(Textures/btnGreen.png)";
 	
 		if (Controller.cruiseControll_left)
-			spriteLeft = "url(textures/btnGreenPress.png)";
+			spriteLeft = "url(Textures/btnGreenPress.png)";
 		
 		if (Controller.cruiseControll_right)
-			spriteRight = "url(textures/btnGreenPress.png)";
+			spriteRight = "url(Textures/btnGreenPress.png)";
 	
 		document.getElementById("btn_controll_left").style.backgroundImage = spriteLeft;
 		document.getElementById("btn_controll_right").style.backgroundImage = spriteRight;
